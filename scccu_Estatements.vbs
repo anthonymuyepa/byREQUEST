@@ -338,7 +338,8 @@ Function GetLastDayOfCurrentMonth()
     Dim lastDay
 
     ' Get the last day of the current month.
-    lastDay = DateSerial(Year(Date), Month(Date) + 1, 0)
+    ' Using DateAdd to handle December correctly (month overflow)
+    lastDay = DateAdd("d", -1, DateSerial(Year(Date), Month(Date) + 1, 1))
 
     ' Return as YYYYMMDD.
     GetLastDayOfCurrentMonth = Year(lastDay) & _
