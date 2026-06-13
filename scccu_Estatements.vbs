@@ -339,6 +339,7 @@ Function GetLastDayOfCurrentMonth()
 
     ' Get the last day of the current month.
     ' Using DateAdd to handle December correctly (month overflow)
+    
     lastDay = DateAdd("d", -1, DateSerial(Year(Date), Month(Date) + 1, 1))
 
     ' Return as YYYYMMDD.
